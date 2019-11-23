@@ -17,8 +17,10 @@ def patient_homepage():
 
     c=Canvas(login_screen,width=800,height=600)
     c.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\home.png")
     c.create_image(400,300,anchor="center",image=image)
+    background_label = Label(login_screen, image=image)
+    background_label.image = image
 
     button11=Button(login_screen, text="View Prescription",command=doctor_login,anchor=CENTER,justify=CENTER,font=('calibri',12,'bold'),state=NORMAL,bg='#add8e6')
     button11.configure(width=20,height=2)
@@ -47,8 +49,10 @@ def prescription():
 
     c=Canvas(login_screen,width=800,height=600)
     c.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\home.png")
     c.create_image(400,300,anchor="center",image=image)
+    background_label = Label(login_screen, image=image)
+    background_label.image = image
 
     label=Label(login_screen, text="Medicine Name",anchor=CENTER,justify=CENTER,font=('Times New Roman',14,'bold'),state=NORMAL)
     label.configure(width=15,height=2)
@@ -96,8 +100,10 @@ def patient_detail():
 
     c=Canvas(login_screen,width=800,height=600)
     c.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\globe.png")
     c.create_image(400,300,anchor="center",image=image)
+    background_label = Label(login_screen, image=image)
+    background_label.image = image
 
     label=Label(login_screen, text="Patient Id",anchor=CENTER,justify=CENTER,font=('Times New Roman',14,'bold'),state=NORMAL)
     label.configure(width=15,height=2)
@@ -144,8 +150,10 @@ def doctor_homepage():
 
     c=Canvas(login_screen,width=800,height=600)
     c.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\globe.png")
     c.create_image(400,300,anchor="center",image=image)
+    background_label = Label(login_screen, image=image)
+    background_label.image = image
 
     label=Label(login_screen, text="DOCTOR HOMEPAGE",anchor=CENTER,justify=CENTER,font=('Times New Roman',14,'bold'),state=NORMAL)
     label.configure(width=25,height=2)
@@ -197,8 +205,10 @@ def patient_login():
 
     c=Canvas(login_screen,width=800,height=600)
     c.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\globe.png")
     c.create_image(400,300,anchor="center",image=image)
+    background_label = Label(login_screen, image=image)
+    background_label.image = image
 
 
     label=Label(login_screen, text="Username",anchor=CENTER,justify=CENTER,font=('Times New Roman',14,'bold'),state=NORMAL)
@@ -255,8 +265,10 @@ def doctor_login():
 
     c=Canvas(login_screen,width=800,height=600)
     c.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\globe.png")
     c.create_image(400,300,anchor="center",image=image)
+    background_label = Label(login_screen, image=image)
+    background_label.image = image
 
 
     label=Label(login_screen, text="Username",anchor=CENTER,justify=CENTER,font=('Times New Roman',14,'bold'),state=NORMAL)
@@ -299,12 +311,18 @@ def login_page():
     login_screen.title("Health Monitoring System")
     login_screen.geometry("800x600")
     
-    c1=Canvas(login_screen,width=800,height=600,bg="white")
+    c1=Canvas(login_screen,width=800,height=600)
     c1.pack()
-    image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\globe.png")
+    image=PhotoImage(file=r"F:\Namratha\5th-Sem-Project\globe.png")
+    background_label = Label(login_screen, image=image)
+    background_label.image = image      #  if you are doing this inside a function, 
+                                        # make sure you keep a reference to the image, 
+                                        # otherwise the image will be destroyed by 
+                                        # the garbage collector when the function returns. 
+                                        # A common technique is to add a reference as an attribute of the label object: (I read this in an article)
     c1.create_image(400,300,anchor="center",image=image)
     
-
+        
     button11=Button(login_screen, text="DOCTOR LOGIN",command=doctor_login,anchor=CENTER,justify=CENTER,font=('calibri',12,'bold'),state=NORMAL)
     button11.configure(width=20,height=2)
     button_window11=c1.create_window(480,250,anchor=SE,window=button11)
@@ -318,16 +336,10 @@ def login_page():
     button_window13=c1.create_window(100,50,anchor=SE,window=button13)
     
 
-
-
-
-
-
-
 c=Canvas(main_screen,width=800,height=600,bg="white")
 c.pack()
-image=PhotoImage(file="C:\\Users\\lenovo\\Desktop\\PROJECT\\home.png")
-c.create_image(400,300,anchor="center",image=image)
+image8=PhotoImage(file = r"F:\Namratha\5th-Sem-Project\home.png")
+c.create_image(400,300,anchor="center",image=image8)
 
 button=Button(main_screen, text="LOGIN",relief=FLAT,anchor=S,justify=CENTER,font=('calibri',12,'bold'),command=login_page,bg='#EBF4FA',activebackground='#add8e6',bd=0)
 button.configure(width=10,height=2)
